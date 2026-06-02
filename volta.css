@@ -1,0 +1,261 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        135deg,
+        #ff758f,
+        #ff8fa3,
+        #ffc2d1
+    );
+    overflow-x:hidden;
+}
+
+/* Caixa inicial */
+
+.confirm-box{
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    width:90%;
+    max-width:500px;
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.confirm-box h2{
+    color:#333;
+}
+
+.confirm-box p{
+    color:#555;
+}
+
+/* Input */
+
+input{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    text-align:center;
+    font-size:16px;
+    outline:none;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+/* Botão principal */
+
+#proceedBtn{
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    background:#ff4d6d;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#proceedBtn:hover{
+    transform:scale(1.05);
+    background:#ff3358;
+}
+
+/* Botão da carta */
+
+#btn{
+    margin-top:20px;
+    padding:15px 30px;
+    border:none;
+    border-radius:50px;
+    background:#ff4d6d;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#btn:hover{
+    transform:scale(1.05);
+    background:#ff3358;
+}
+
+/* Botão de decisão */
+
+a button{
+    margin-top:20px;
+    padding:15px 30px;
+    border:none;
+    border-radius:50px;
+    background:#ff4d6d;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+a button:hover{
+    transform:scale(1.05);
+    background:#ff3358;
+}
+
+/* Coração da transição */
+
+#heartTransition{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    font-size:100px;
+    z-index:9999;
+    display:none;
+}
+
+.heart-grow{
+    display:block !important;
+    animation:growHeart 2s forwards;
+}
+
+@keyframes growHeart{
+
+    0%{
+        transform:translate(-50%,-50%) scale(0);
+        opacity:1;
+    }
+
+    80%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translate(-50%,-50%) scale(30);
+        opacity:0;
+    }
+
+}
+
+/* Página da carta */
+
+#letterPage{
+    position:fixed;
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #ff758f,
+        #ff8fa3,
+        #ffc2d1
+    );
+
+    padding:20px;
+    overflow-y:auto;
+}
+
+/* Carta */
+
+.letter{
+    background:white;
+    width:90%;
+    max-width:700px;
+    padding:40px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 10px 40px rgba(0,0,0,.2);
+
+    animation:appear 1s ease;
+}
+
+.letter h1{
+    color:#ff4d6d;
+    margin-bottom:20px;
+}
+
+.letter p{
+    line-height:1.8;
+    color:#444;
+    margin-bottom:15px;
+}
+
+.signature{
+    margin-top:30px;
+    font-size:24px;
+    color:#ff4d6d;
+    font-weight:bold;
+}
+
+/* Mensagem escondida */
+
+.hidden{
+    display:none;
+}
+
+.show{
+    display:block;
+}
+
+#hiddenMessage{
+    background:white;
+    width:90%;
+    max-width:700px;
+    padding:40px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 10px 40px rgba(0,0,0,.2);
+    margin-top:30px;
+
+    animation:appear 1s ease;
+}
+
+#hiddenMessage h2{
+    color:#ff4d6d;
+    margin-bottom:15px;
+}
+
+#hiddenMessage p{
+    color:#444;
+    line-height:1.8;
+}
+
+/* Animação de entrada */
+
+@keyframes appear{
+
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.hidden{
+    display:none;
+}
+
+.show{
+    display:block;
+    margin-top:25px;
+    animation:appear 1s ease;
+}

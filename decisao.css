@@ -1,0 +1,113 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff758f,#ff8fa3,#ffc2d1);
+    overflow:hidden;
+}
+
+/* caixa central */
+.final-choice{
+    position:relative;
+    z-index:10;
+
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+
+    width:90%;
+    max-width:500px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* botões */
+button{
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    background:#ff4d6d;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    background:#ff3358;
+}
+
+/* mensagem final */
+#resultMessage{
+    font-size:18px;
+    font-weight:bold;
+    color:#333;
+}
+
+/* fundo das fotos */
+.hearts-container{
+    position:fixed;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+}
+
+/* ❤️ FOTOS EM FORMATO DE CORAÇÃO (CORRIGIDO) */
+.heart-img{
+    position:absolute;
+    width:95px;
+    height:95px;
+
+    object-fit:cover;
+    object-position:center;
+
+    /* 🔥 IMPORTANTE: sem padding */
+    padding:0;
+    background:transparent;
+
+    /* coração perfeito */
+    clip-path: path("M50 15 C35 -5, 0 10, 0 40 C0 70, 50 95, 50 95 C50 95, 100 70, 100 40 C100 10, 65 -5, 50 15 Z");
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+
+    opacity:0.95;
+
+    animation:floatUp 8s linear infinite;
+}
+
+/* posições das fotos */
+.heart-img:nth-child(1){ left:10%; animation-delay:0s; }
+.heart-img:nth-child(2){ left:30%; animation-delay:1.5s; }
+.heart-img:nth-child(3){ left:60%; animation-delay:3s; }
+.heart-img:nth-child(4){ left:80%; animation-delay:4.5s; }
+
+/* animação de subida */
+@keyframes floatUp{
+    0%{
+        bottom:-120px;
+        transform:scale(0.8) rotate(0deg);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    100%{
+        bottom:120%;
+        transform:scale(1.1) rotate(360deg);
+        opacity:0;
+    }
+}

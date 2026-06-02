@@ -1,0 +1,85 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        135deg,
+        #ff758f,
+        #ff8fa3,
+        #ffc2d1
+    );
+}
+
+.confirm-box{
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    width:90%;
+    max-width:500px;
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+input{
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    text-align:center;
+    font-size:16px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+#proceedBtn{
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+}
+
+#heartTransition{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    font-size:100px;
+    z-index:9999;
+    display:none;
+}
+
+.heart-grow{
+    display:block !important;
+    animation:growHeart 2s forwards;
+}
+
+@keyframes growHeart{
+
+    0%{
+        transform:translate(-50%,-50%) scale(0);
+        opacity:1;
+    }
+
+    80%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translate(-50%,-50%) scale(30);
+        opacity:0;
+    }
+
+}
